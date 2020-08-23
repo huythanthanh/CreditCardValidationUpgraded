@@ -1,0 +1,98 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #ccc;
+}
+
+.title, .subtitle {
+  text-align: center;
+  font-weight: 300;
+}
+
+.wrapper {
+  width: 500px;
+  margin: 50px auto;
+  background: #ECF0F1;
+  padding: 25px;
+  position: relative;
+}
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+#cc-wrapper {
+  position: relative;
+  width: 100%;
+}
+#cc-wrapper:before {
+  position: absolute;
+  top: -20px;
+  right: 2.5%;
+  font-size: 15px;
+  text-align: right;
+}
+#cc-wrapper.fail #cc {
+  border-color: #F44336;
+}
+#cc-wrapper.fail:before {
+  content: 'Credit Card Not Valid';
+  color: #F44336;
+}
+#cc-wrapper.pass #cc {
+  border-color: #4CAF50;
+}
+#cc-wrapper.pass:before {
+  content: 'Credit Card Valid';
+  color: #4CAF50;
+}
+
+#cc, #val {
+  width: 95%;
+  height: 50px;
+  display: block;
+  margin: 25px auto;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  position: relative;
+}
+#cc:active, #cc:focus, #val:active, #val:focus {
+  outline: none;
+}
+
+#cc {
+  padding: 0 25px;
+  border: 1px solid #cccccc;
+}
+
+#val {
+  background: #5677fc;
+  color: white;
+  border: none;
+}
+#val:hover {
+  background: #3d63fc;
+}
+
+.material {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.material .ink {
+  position: absolute;
+  border-radius: 50%;
+  height: 1px;
+  width: 1px;
+  border: 1px solid #244ffb;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.8;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
